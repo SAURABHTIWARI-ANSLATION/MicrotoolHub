@@ -1,11 +1,11 @@
 import { Link } from "react-router-dom";
 import { Card } from "@/components/ui/card";
-import { Tool } from "@/data/tools";
+import { ToolConfig } from "@/microtools/types";
 import * as Icons from "lucide-react";
 import { LucideIcon } from "lucide-react";
 
 interface ToolCardProps {
-  tool: Tool;
+  tool: ToolConfig & { path: string };
 }
 
 export const ToolCard = ({ tool }: ToolCardProps) => {
