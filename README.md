@@ -47,7 +47,7 @@ Also check for custom hooks or wrappers that might be tied to integrations.
 Once cleaned, run:
 
 ```bash
-cd C:\Users\stw28\OneDrive\Desktop\Microtool_track_1
+cd C:ENJOY------------->>>>>
 npm install
 npm run dev
 ```
