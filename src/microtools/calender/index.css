@@ -1,0 +1,319 @@
+/* --- Base Styles and Reset --- */
+:root {
+    --dark-bg: #1a1a2e; /* Dark Indigo */
+    --light-bg: #f0f4f8; /* Light background */
+    --card-bg-dark: rgba(255, 255, 255, 0.05); /* Ethereal/Glassy BG for dark mode */
+    --card-bg-light: rgba(255, 255, 255, 0.8); /* Light card background for light mode */
+    --primary-color: #007bff; /* Blue accent for nav */
+    --accent-color: #ffc107; /* Gold/Yellow accent */
+    --text-light: #f0f4f8;
+    --text-dark: #1a1a2e;
+    --text-muted-dark: #a0a8b4;
+    --text-muted-light: #6c757d;
+    --shadow-color-dark: rgba(31, 38, 135, 0.37);
+    --shadow-color-light: rgba(0, 0, 0, 0.1);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* Light theme styles (default) */
+body {
+    background-color: var(--light-bg);
+    color: var(--text-dark);
+    line-height: 1.6;
+    min-height: 100vh;
+    background-image: linear-gradient(135deg, #f0f4f8 0%, #e0e7ff 100%);
+}
+
+/* Dark theme styles */
+body.dark {
+    background-color: var(--dark-bg);
+    color: var(--text-light);
+    background-image: linear-gradient(135deg, #1a1a2e 0%, #0f0f1a 100%);
+}
+
+/* --- App Container --- */
+.panchang-app {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* --- Main Content Container --- */
+.container {
+    max-width: 1100px;
+    margin: 30px auto;
+    padding: 0 20px;
+    flex-grow: 1;
+}
+
+h1 {
+    text-align: center;
+    color: var(--text-dark);
+    margin-bottom: 40px;
+    font-size: 2em;
+}
+
+.dark h1 {
+    color: var(--text-light);
+    text-shadow: 0 0 5px rgba(255, 255, 255, 0.2);
+}
+
+/* --- Date Picker & Controls --- */
+.controls {
+    text-align: center;
+    margin-bottom: 40px;
+    padding: 20px;
+    background: var(--card-bg-light);
+    border-radius: 15px;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(8px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+}
+
+.dark .controls {
+    background: var(--card-bg-dark);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.controls label {
+    font-size: 1.1em;
+    color: var(--text-dark);
+}
+
+.dark .controls label {
+    color: var(--text-light);
+}
+
+.controls input {
+    font-size: 1.1em;
+    color: var(--text-dark);
+}
+
+.dark .controls input {
+    color: var(--text-light);
+    background-color: rgba(255, 255, 255, 0.1);
+    border: none;
+}
+
+.controls input[type="date"] {
+    padding: 10px 15px;
+    border-radius: 8px;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    background-color: rgba(255, 255, 255, 0.8);
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.dark .controls input[type="date"] {
+    border: none;
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.controls input[type="date"]::-webkit-calendar-picker-indicator {
+    filter: invert(0);
+}
+
+.dark .controls input[type="date"]::-webkit-calendar-picker-indicator {
+    filter: invert(1);
+}
+
+/* --- Panchang Grid --- */
+.panchang-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 25px;
+}
+
+.card {
+    background: var(--card-bg-light);
+    padding: 25px;
+    border-radius: 15px;
+    box-shadow: 0 8px 32px 0 var(--shadow-color-light);
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(4px); 
+    transition: transform 0.3s;
+}
+
+.dark .card {
+    background: var(--card-bg-dark);
+    box-shadow: 0 8px 32px 0 var(--shadow-color-dark);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+.card h3 {
+    color: var(--accent-color);
+    margin-bottom: 15px;
+    font-size: 1.4em;
+    border-bottom: 2px solid var(--primary-color);
+    padding-bottom: 8px;
+}
+
+.panchang-detail {
+    margin-bottom: 12px;
+    font-size: 1em;
+    display: flex;
+    justify-content: space-between;
+    padding: 5px 0;
+    border-bottom: 1px dashed rgba(0, 0, 0, 0.1);
+}
+
+.dark .panchang-detail {
+    border-bottom: 1px dashed rgba(255, 255, 255, 0.1);
+}
+
+.panchang-detail strong {
+    color: var(--text-dark);
+    font-weight: 600;
+}
+
+.dark .panchang-detail strong {
+    color: var(--text-light);
+}
+
+.panchang-detail span {
+    color: var(--text-muted-light);
+}
+
+.dark .panchang-detail span {
+    color: var(--text-muted-dark);
+}
+
+/* Festival List Styling */
+#festivalList {
+    list-style: none;
+    padding-left: 0;
+}
+
+#festivalList li {
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 10px 15px;
+    border-radius: 5px;
+    margin-bottom: 8px;
+    border-left: 3px solid var(--accent-color);
+}
+
+.dark #festivalList li {
+    background-color: rgba(255, 255, 255, 0.05);
+}
+
+/* Loading/Error State */
+.loading-message {
+    text-align: center;
+    grid-column: 1 / -1;
+    font-size: 1.4em;
+    color: var(--accent-color);
+    padding: 60px;
+}
+
+.error-message {
+    color: #dc3545;
+}
+
+/* --- Footer --- */
+.footer {
+    background-color: #e0e7ff;
+    color: var(--text-muted-light);
+    text-align: center;
+    padding: 20px;
+    margin-top: 40px;
+    font-size: 0.9em;
+    border-top: 3px solid var(--primary-color);
+}
+
+.dark .footer {
+    background-color: #0f0f1a;
+    color: var(--text-muted-dark);
+    border-top: 3px solid var(--primary-color);
+}
+
+/* --- MEDIA QUERY (Responsive) --- */
+@media (min-width: 768px) {
+    .panchang-grid {
+        /* Desktop: 3-column layout structure */
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+    
+    .panchang-card-main {
+        grid-column: 1 / 3; 
+    }
+    
+    .time-card {
+        grid-column: 1 / 2;
+    }
+    .festival-card {
+        grid-column: 2 / 4; 
+        grid-row: 1 / 3; 
+    }
+}
+
+/* Further Refinement for the Look (Using the image layout) */
+@media (min-width: 1024px) {
+    .panchang-grid {
+        /* Final 3-column layout as seen in your screenshots */
+        grid-template-columns: 1.5fr 1fr 1.5fr;
+        grid-template-areas:
+            "main timing festival";
+    }
+
+    .panchang-card-main {
+        grid-area: main;
+        /* Combine Tithi/Nakshatra and Karan/Yoga into one Main Card for the large column look */
+    }
+
+    .time-card {
+        grid-area: timing;
+        /* Put timing in the middle column */
+    }
+    
+    .festival-card {
+        grid-area: festival;
+        /* Put festivals on the right */
+        grid-row: auto; /* Reset grid-row override */
+        grid-column: auto; /* Reset grid-column override */
+    }
+    /* We'll modify the JSX structure to match this 3-card layout */
+}
+
+/* Festival List Styling (Update/Add this section) */
+#festivalList {
+    list-style: none;
+    padding-left: 0;
+}
+
+#festivalList li {
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 10px 15px;
+    border-radius: 5px;
+    margin-bottom: 8px;
+    border-left: 3px solid var(--accent-color);
+}
+
+.dark #festivalList li {
+    background-color: rgba(255, 255, 255, 0.05);
+}
+
+/* New style for Major Festivals */
+#festivalList li.major-festival-item {
+    background-color: rgba(255, 193, 7, 0.15); /* Slightly darker gold background */
+    border-left: 4px solid var(--accent-color);
+    font-weight: 600;
+    color: var(--text-dark);
+}
+
+.dark #festivalList li.major-festival-item {
+    background-color: rgba(255, 193, 7, 0.15);
+    color: var(--text-light);
+}

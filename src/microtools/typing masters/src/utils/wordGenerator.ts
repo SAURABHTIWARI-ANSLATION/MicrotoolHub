@@ -1,0 +1,60 @@
+const commonWords = [
+  "the", "be", "to", "of", "and", "a", "in", "that", "have", "I",
+  "it", "for", "not", "on", "with", "he", "as", "you", "do", "at",
+  "this", "but", "his", "by", "from", "they", "we", "say", "her", "she",
+  "or", "an", "will", "my", "one", "all", "would", "there", "their", "what",
+  "so", "up", "out", "if", "about", "who", "get", "which", "go", "me",
+  "when", "make", "can", "like", "time", "no", "just", "him", "know", "take",
+  "people", "into", "year", "your", "good", "some", "could", "them", "see", "other",
+  "than", "then", "now", "look", "only", "come", "its", "over", "think", "also",
+  "back", "after", "use", "two", "how", "our", "work", "first", "well", "way",
+  "even", "new", "want", "because", "any", "these", "give", "day", "most", "us",
+  "is", "was", "are", "been", "has", "had", "were", "said", "did", "having",
+  "may", "should", "could", "might", "must", "can", "being", "does", "did", "doing",
+  "world", "school", "still", "try", "last", "ask", "need", "too", "feel", "three",
+  "when", "state", "never", "become", "between", "high", "really", "something", "most", "another",
+  "much", "family", "own", "out", "leave", "put", "old", "while", "mean", "keep",
+  "student", "great", "same", "big", "group", "begin", "seem", "country", "help", "talk",
+  "where", "turn", "problem", "every", "start", "hand", "might", "American", "show", "part",
+  "against", "place", "over", "such", "again", "few", "case", "most", "week", "company",
+  "system", "program", "question", "work", "government", "number", "night", "point", "home", "water",
+  "room", "mother", "area", "money", "story", "fact", "month", "lot", "right", "study",
+  "book", "eye", "job", "word", "though", "business", "issue", "side", "kind", "head",
+  "house", "service", "friend", "father", "power", "hour", "game", "line", "end", "member",
+  "law", "car", "city", "community", "name", "president", "team", "minute", "idea", "kid",
+  "body", "information", "back", "parent", "face", "others", "level", "office", "door", "health",
+  "person", "art", "war", "history", "party", "result", "change", "morning", "reason", "research",
+  "girl", "guy", "moment", "air", "teacher", "force", "education", "foot", "boy", "age",
+  "policy", "everything", "love", "process", "music", "including", "consider", "appear", "actually", "buy",
+  "probably", "human", "wait", "serve", "market", "die", "send", "expect", "home", "sense",
+  "build", "stay", "fall", "nation", "plan", "cut", "college", "interest", "death", "course",
+  "someone", "experience", "behind", "reach", "local", "kill", "remain", "effect", "yeah", "suggest",
+  "class", "control", "raise", "care", "perhaps", "little", "late", "hard", "field", "else",
+  "pass", "former", "sell", "major", "sometimes", "require", "along", "development", "themselves", "report",
+  "role", "better", "economic", "effort", "decide", "rate", "strong", "possible", "heart", "drug",
+  "show", "leader", "light", "voice", "wife", "whole", "police", "mind", "finally", "pull",
+  "return", "free", "military", "price", "report", "less", "according", "decision", "explain", "son",
+  "hope", "develop", "view", "relationship", "carry", "town", "road", "drive", "arm", "true",
+  "federal", "break", "difference", "thank", "receive", "value", "international", "building", "action", "full",
+  "model", "join", "season", "society", "tax", "director", "position", "player", "agree", "especially",
+  "record", "pick", "wear", "paper", "special", "space", "ground", "form", "support", "event",
+  "official", "whose", "matter", "everyone", "center", "couple", "site", "project", "hit", "base",
+  "activity", "star", "table", "need", "court", "produce", "eat", "teach", "oil", "half",
+  "situation", "easy", "cost", "industry", "figure", "face", "street", "image", "itself", "phone",
+  "either", "data", "cover", "quite", "picture", "clear", "practice", "piece", "land", "recent",
+  "describe", "product", "doctor", "wall", "patient", "worker", "news", "test", "movie", "certain",
+  "north", "personal", "open", "support", "simply", "third", "technology", "catch", "step", "baby",
+  "computer", "type", "attention", "draw", "film", "Republican", "tree", "source", "red", "nearly",
+  "organization", "choose", "cause", "hair", "century", "evidence", "window", "difficult", "listen", "soon",
+  "culture", "billion", "chance", "brother", "energy", "period", "summer", "realize", "hundred", "available",
+  "plant", "likely", "opportunity", "term", "short", "letter", "condition", "choice", "place", "single",
+];
+
+export const generateWords = (count: number): string[] => {
+  const words: string[] = [];
+  for (let i = 0; i < count; i++) {
+    const randomIndex = Math.floor(Math.random() * commonWords.length);
+    words.push(commonWords[randomIndex]);
+  }
+  return words;
+};

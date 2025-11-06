@@ -22,8 +22,8 @@ const App = () => (
           <Route path="/about" element={<About />} />
           <Route path="/contact" element={<Contact />} />
           
-          {/* All Tools - Dynamic Route */}
-          <Route path="/tools/:toolId" element={<ToolPage />} />
+          {/* All Tools - Dynamic Route with wildcard */}
+          <Route path="/tools/:toolId/*" element={<ToolPage />} />
           
           {/* 404 - Catch All */}
           <Route path="*" element={<NotFound />} />

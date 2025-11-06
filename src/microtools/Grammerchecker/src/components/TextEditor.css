@@ -1,0 +1,155 @@
+.text-editor-container {
+  position: relative;
+}
+
+.text-editor-header {
+  margin-bottom: 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.text-editor-title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #1f2937;
+}
+
+.text-editor-toggle-btn {
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  font-weight: 500;
+  transition: all 0.2s ease;
+  border: none;
+  cursor: pointer;
+}
+
+.text-editor-toggle-btn-edit {
+  background-color: #3b82f6;
+  color: white;
+}
+
+.text-editor-toggle-btn-edit:hover {
+  background-color: #2563eb;
+}
+
+.text-editor-toggle-btn-view {
+  background-color: #10b981;
+  color: white;
+}
+
+.text-editor-toggle-btn-view:hover {
+  background-color: #059669;
+}
+
+.text-editor-textarea {
+  width: 100%;
+  height: 20rem;
+  padding: 1rem;
+  border: 1px solid #d1d5db;
+  border-radius: 0.5rem;
+  resize: none;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 0.875rem;
+  line-height: 1.625;
+}
+
+.text-editor-textarea:focus {
+  outline: 2px solid #3b82f6;
+  border-color: transparent;
+}
+
+.text-editor-display {
+  width: 100%;
+  height: 20rem;
+  padding: 1rem;
+  border: 1px solid #e5e7eb;
+  border-radius: 0.5rem;
+  overflow: auto;
+  background-color: #f9fafb;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 0.875rem;
+  line-height: 1.625;
+  white-space: pre-wrap;
+}
+
+.text-editor-placeholder {
+  color: #6b7280;
+  font-style: italic;
+}
+
+.text-editor-error-highlight {
+  cursor: pointer;
+  border-radius: 0.25rem;
+  padding: 0 0.25rem;
+  transition: all 0.2s ease;
+}
+
+.text-editor-error-highlight:hover {
+  opacity: 0.8;
+}
+
+.text-editor-error-spelling {
+  background-color: #fecaca;
+  border-bottom: 2px solid #ef4444;
+}
+
+.text-editor-error-grammar {
+  background-color: #bfdbfe;
+  border-bottom: 2px solid #3b82f6;
+}
+
+.text-editor-error-style {
+  background-color: #fed7aa;
+  border-bottom: 2px solid #f97316;
+}
+
+.text-editor-error-punctuation {
+  background-color: #ddd6fe;
+  border-bottom: 2px solid #8b5cf6;
+}
+
+.text-editor-selected-error {
+  ring: 2px solid #9ca3af;
+}
+
+.text-editor-legend {
+  margin-top: 0.5rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  font-size: 0.75rem;
+}
+
+.text-editor-legend-item {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+.text-editor-legend-color {
+  width: 0.75rem;
+  height: 0.75rem;
+  border: 1px solid;
+  border-radius: 0.125rem;
+}
+
+.text-editor-legend-spelling {
+  background-color: #fecaca;
+  border-color: #ef4444;
+}
+
+.text-editor-legend-grammar {
+  background-color: #bfdbfe;
+  border-color: #3b82f6;
+}
+
+.text-editor-legend-style {
+  background-color: #fed7aa;
+  border-color: #f97316;
+}
+
+.text-editor-legend-punctuation {
+  background-color: #ddd6fe;
+  border-color: #8b5cf6;
+}

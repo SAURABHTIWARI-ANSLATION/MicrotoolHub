@@ -1,0 +1,14 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* App tokens */
+:root {
+  --radius: 14px;
+}
+
+/* Smooth focus */
+*:focus-visible {
+  outline: 2px solid rgb(223, 235, 255);
+  outline-offset: 2px;
+}

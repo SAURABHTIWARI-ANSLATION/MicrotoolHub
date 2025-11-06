@@ -1,0 +1,16 @@
+{
+  "name": "SnapShot \u2014 URL to Image",
+  "short_name": "SnapShot",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0b1020",
+  "theme_color": "#0b1020",
+  "description": "Enter a URL and capture a crisp website screenshot. Frontend-only.",
+  "icons": [
+    {
+      "src": "/favicon.svg",
+      "sizes": "64x64",
+      "type": "image/svg+xml"
+    }
+  ]
+}

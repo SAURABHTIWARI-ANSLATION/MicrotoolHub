@@ -26,12 +26,12 @@ const Index = () => {
   });
 
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen bg-background flex flex-col">
       <Header />
       
-      <main className="container mx-auto px-4 py-12">
+      <main className="container mx-auto px-4 py-0 flex-grow">
         {/* Hero Section */}
-        <div className="text-center mb-12 space-y-4 animate-fade-in">
+        <div className="text-center mb-12 space-y-4">
           <h1 className="text-5xl md:text-6xl font-bold bg-gradient-to-r from-primary via-accent to-primary bg-clip-text text-transparent">
             MicroTools Collection
           </h1>
@@ -42,7 +42,7 @@ const Index = () => {
 
         {/* Featured Tools */}
         {featuredTools.length > 0 && (
-          <div className="mb-12 animate-fade-in">
+          <div className="mb-12">
             <Card className="p-8 bg-gradient-to-br from-primary/10 via-accent/5 to-primary/5 border-primary/20">
               <div className="flex items-center gap-2 mb-6">
                 <Sparkles className="w-5 h-5 text-primary" />
@@ -97,7 +97,7 @@ const Index = () => {
             {selectedCategory ? `${selectedCategory} Tools` : 'All Tools'} 
             <span className="text-muted-foreground ml-2">({filteredTools.length})</span>
           </h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 animate-fade-in">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {filteredTools.map(tool => (
               <ToolCard key={tool.id} tool={tool} />
             ))}
